@@ -1,0 +1,28 @@
+{
+  "name": "LeRobot Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "PYTHON_VERSION": "3.10"
+    }
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/lerobot,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "source /opt/venv/bin/activate && pip install -e .[test,aloha,xarm,pusht,dynamixel] --extra-index-url https://download.pytorch.org/whl/cpu",
+  "remoteUser": "root",
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-vscode.cpptools"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.10"
+    }
+  },
+  "overrideCommand": false
+}
