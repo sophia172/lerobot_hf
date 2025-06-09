@@ -16,6 +16,7 @@
 logs
 tmp
 wandb
+FT*/
 
 # Data
 data
